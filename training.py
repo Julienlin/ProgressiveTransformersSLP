@@ -3,12 +3,13 @@ import time
 import shutil
 import os
 import queue
+from typing import Optional
 import numpy as np
 
 import torch
 from torch import Tensor
 from torch.utils.tensorboard import SummaryWriter
-from torchtext.data import Dataset
+from torchtext.legacy.data import Dataset
 
 from model import build_model
 from batch import Batch
@@ -570,7 +571,7 @@ def train(cfg_file: str, ckpt=None) -> None:
 
 # pylint: disable-msg=logging-too-many-args
 def test(cfg_file,
-         ckpt: str) -> None:
+         ckpt: Optional[str]=None) -> None:
 
     # Load the config file
     cfg = load_config(cfg_file)

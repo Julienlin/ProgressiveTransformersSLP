@@ -3,7 +3,7 @@ import numpy as np
 import math
 
 import torch
-from torchtext.data import Dataset
+from torchtext.legacy.data import Dataset
 
 from helpers import bpe_postprocess, load_config, get_latest_checkpoint, \
     load_checkpoint, calculate_dtw

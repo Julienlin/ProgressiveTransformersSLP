@@ -5,12 +5,12 @@ Data module
 import sys
 import os
 import os.path
-from typing import Optional
+from typing import Optional, Tuple
 import io
 
 # from torchtext.datasets import TranslationDataset
-from torchtext import data
-from torchtext.data import Dataset, Iterator, Field
+from torchtext.legacy import data
+from torchtext.legacy.data import Dataset, Iterator, Field
 import torch
 
 from constants import UNK_TOKEN, EOS_TOKEN, BOS_TOKEN, PAD_TOKEN, TARGET_PAD
@@ -25,8 +25,8 @@ from vocabulary import build_vocab, Vocabulary
 # Each joint value should be separated by a space; " "
 # Each frame is partioned using the known trg_size length, which includes all joints (In 2D or 3D) and the counter
 # Files file should contain the name of each sequence on a new line
-def load_data(cfg: dict) -> (Dataset, Dataset, Optional[Dataset],
-                                  Vocabulary, Vocabulary):
+def load_data(cfg: dict) -> Tuple[Dataset, Dataset, Optional[Dataset],
+                                  Vocabulary, Vocabulary]:
     """
     Load train, dev and optionally test data as specified in configuration.
     Vocabularies are created from the training set with a limit of `voc_limit`
