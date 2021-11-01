@@ -6,6 +6,14 @@ Conference video available at https://twitter.com/BenMSaunders/status/1336638886
 
 # Usage
 
+Create a virtual environment for the project :
+
+`python -m venv .venv`
+
+Activate the virtual environment :
+
+`source .venv/bin/activate`
+
 Install required packages using the requirements.txt file.
 
 `pip install -r requirements.txt`
