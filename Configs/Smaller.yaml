@@ -27,11 +27,11 @@ training:
     validation_freq: 10  # After how many steps to run a validation on the model
     logging_freq: 250  # After how many steps to log training progress
     eval_metric: "dtw"  # Evaluation metric during training (dtw','bt')
-    model_dir: "./Models/Base" # Where the model shall be stored
+    model_dir: "./Models/Smaller" # Where the model shall be stored
     overwrite: False # Flag to overwrite a previous saved model in the model_dir
     continue: True  # Flag to continue from a previous saved model in the model_dir
     shuffle: True  # Flag to shuffle the data during training
-    use_cuda: True  # Flag to use GPU cuda capabilities
+    use_cuda: False  # Flag to use GPU cuda capabilities
     max_output_length: 300 # Max Output Length
     keep_last_ckpts: 1 # How many previous best/latest checkpoints to keep
     loss: "MSE"  # Loss function (MSE, L1)
